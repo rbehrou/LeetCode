@@ -1,3 +1,6 @@
+/*
+https://leetcode.com/problems/two-sum/
+*/
 #include <iostream>
 #include <vector>
 #include <map>
@@ -7,13 +10,13 @@ using namespace std;
 class Solution
 {
 public:
-    vector<int> twoSum(vector<int>& nums, int target) 
+    vector<int> twoSum(vector<int> &nums, int target)
     {
         // create a map and initialize indices
         map<int, int> compDict;
         map<int, int>::iterator it;
         vector<int> res{-1, -1};
-        
+
         // loop over number of elements in the nums
         for (auto i = 0; i < nums.size(); ++i)
         {
@@ -33,7 +36,7 @@ public:
                 compDict[x] = i;
             }
         }
-        
+
         // return indices
         return res;
     }
@@ -43,14 +46,18 @@ int main()
 {
     // class object
     Solution sol;
-    
-    // test case
-    vector<int> nums{2,7,11,15};
-    auto target = 9;
-    
-    auto res = sol.twoSum(nums, target);
-    
-    cout << "res: [" << res[0] << ", " << res[1] << "]" << endl; 
 
+    // test cases
+    vector<vector<int>> nums{{2, 7, 11, 15},
+                             {3, 2, 4},
+                             {3, 3}};
+    vector<int> target{9, 6, 6};
+
+    // loop over number of test cases
+    for (auto i = 0; i < nums.size(); ++i)
+    {
+        auto res = sol.twoSum(nums[i], target[i]);
+        cout << "res: [" << res[0] << ", " << res[1] << "]" << endl;
+    }
     return 0;
 }

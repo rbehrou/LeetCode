@@ -1,3 +1,7 @@
+"""
+https://leetcode.com/problems/two-sum/
+"""
+
 class Solution:
     def twoSum(self, nums, target):
         # create a dictionary
@@ -14,14 +18,20 @@ class Solution:
                 # otherwise store the difference in the dictionary
                 compDict[x] = i
 
-# call the solution class                
-sol = Solution()
+def main():
+    # call the solution class                
+    sol = Solution()
+    # test cases
+    nums_test_cases = [
+        [2, 7, 11, 15],
+        [3, 2, 4],
+        [3, 3]
+    ]
+    target_test_cases = [9, 6, 6]
+    # loop over number of test cases
+    for i in range(len(nums_test_cases)):
+        # print response
+        print(sol.twoSum(nums_test_cases[i],target_test_cases[i]))
 
-# test case
-nums = [2, 7, 11, 15]
-target = 9
-
-# print response
-res = sol.twoSum(nums,target)
-print(res)
-
+if __name__ == '__main__':
+    main()
