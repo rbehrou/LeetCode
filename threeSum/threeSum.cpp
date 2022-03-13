@@ -51,8 +51,8 @@ public:
                 {
                     // otherwise it is a solution
                     res.push_back({nums[i], nums[left], nums[right]});
-                        // check if nums[left] == nums[left + 1]
-                        while (left < right && nums[left] == nums[left + 1])
+                    // check if nums[left] == nums[left + 1]
+                    while (left < right && nums[left] == nums[left + 1])
                     {
                         // increase left
                         left++;
