@@ -16,16 +16,12 @@ class Solution:
             if k == 2:
                 return twoSum(nums, target)
             
-            # check for the smallest and largest value in the list (sorted list)
-            if (target // k) < nums[0] or (target // k) > nums[-1]:
-                return []
-            
             # initialize
             res = []
             
             # loop over number of elements in the list
             for i in range(len(nums)):
-                # recursion
+                # apply recursion
                 if (i == 0 or nums[i] != nums[i - 1]):
                     for x in kSum(nums[i + 1:], target - nums[i], k - 1):
                         res.append([nums[i]] + x)
@@ -34,24 +30,29 @@ class Solution:
             return res
         
         # call twoSum
+        # ref: https://www.geeksforgeeks.org/two-pointers-technique/
         def twoSum(nums: List[int], target: int) -> List[int]:
             
             # default return
             if not nums: return []
             
-            # initialize
-            res = []
-            left = 0
-            right  = len(nums) - 1
+            # initialize result, left and right pointer
+            res   = []
+            left  = 0
+            right = len(nums) - 1
             
             # start with the two pointers
             while left < right:
+                # compute the current value 
                 x = nums[left] + nums[right]
+                # because it is sorted array, if x < target then move the left pointer
                 if (x < target) or (left > 0 and nums[left] == nums[left - 1]):
-                    left  = left + 1
+                    left = left + 1
+                # because it is sorted array, if x > target then move the right pointer
                 elif (x > target) or (right < len(nums)-1 and nums[right] == nums[right + 1]):
-                    right  = right - 1
+                    right = right - 1
                 else:
+                    # it is the solution and store the results
                     res.append([nums[left], nums[right]])
                     # update left and right pointer
                     left  = left + 1
