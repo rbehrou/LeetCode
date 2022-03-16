@@ -1,8 +1,10 @@
 """
 https://leetcode.com/problems/3sum/
 """
+from typing import List
+
 class Solution:
-    def threeSum(self, nums):
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
         # step 1: return empty if the list is empty
         if (len(nums) == 0): return []
         
@@ -44,7 +46,7 @@ class Solution:
                         right = right - 1
                     
                     # otherwise increase left and decrease right
-                    left = left + 1
+                    left  = left + 1
                     right = right - 1
         # return results            
         return res
