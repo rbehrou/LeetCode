@@ -15,7 +15,6 @@ public:
         // create a map and initialize indices
         map<int, int> compDict;
         map<int, int>::iterator it;
-        vector<int> res{-1, -1};
 
         // loop over number of elements in the nums
         for (auto i = 0; i < numbers.size(); ++i)
@@ -27,8 +26,7 @@ public:
             // if the key is in the map then update the indices
             if (it != compDict.end())
             {
-                res[0] = compDict[numbers[i]] + 1;
-                res[1] = i + 1;
+                return {compDict[numbers[i]] + 1, i + 1};
             }
             // otherwise store the key and value in the map
             else
@@ -36,9 +34,6 @@ public:
                 compDict[x] = i;
             }
         }
-
-        // return indices
-        return res;
     }
 };
 
