@@ -1,2 +1,2 @@
 # LeetCode
-Solutions to the algorithm problems in LeetCode (https://leetcode.com/)
+Personal solutions to the algorithm problems in LeetCode (https://leetcode.com/)
