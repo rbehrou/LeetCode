@@ -6,6 +6,10 @@ from typing import List
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:
+        # a simple one line solution with converting integer to string
+        # return (str(x)[::-1]) == str(x)
+        
+        # solution without converting the integer to a string
         # return false if the input is negative
         if (x < 0):
             return False
